@@ -1,0 +1,16 @@
+House Price Predictor — Sample Predictions
+============================================================
+
+Label : Small Apartment in Electronic City (no pool)
+Input : {"Area_SqFt": 600, "Rooms": 2, "Build_Year": 2000, "Location": "Electronic City", "Street_Type": "Inner Lane", "Furnishing": "Unfurnished", "Property_Type": "Apartment", "Has_Pool": false}
+Result: 38.64 Lakhs (38.64 Lakhs)
+
+Label : Mid-size Independent House in Whitefield
+Input : {"Area_SqFt": 1800, "Rooms": 4, "Build_Year": 2012, "Location": "Whitefield", "Street_Type": "Cross Road", "Furnishing": "Semi-Furnished", "Property_Type": "Independent House", "Has_Pool": false}
+Result: 1.76 Crores (176.28 Lakhs)
+
+Label : Large Villa with Pool in Indiranagar
+Input : {"Area_SqFt": 4500, "Rooms": 8, "Build_Year": 2022, "Location": "Indiranagar", "Street_Type": "Main Road", "Furnishing": "Fully Furnished", "Property_Type": "Villa", "Has_Pool": true}
+Result: 8.05 Crores (804.54 Lakhs)
+
+Ordering: PASS ✅

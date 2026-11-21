@@ -1,0 +1,13 @@
+House Price Predictor — Model Metrics
+======================================
+Dataset size  : 5000 rows
+Train size    : 4000
+Test size     : 1000
+
+MAE  : 27.2930 Lakhs
+RMSE : 39.3732 Lakhs
+R²   : 0.9385
+
+Feature columns (order used in training):
+  Numeric : ['Area_SqFt', 'Rooms', 'Build_Year', 'Has_Pool']
+  Categorical : ['Location', 'Street_Type', 'Furnishing', 'Property_Type']

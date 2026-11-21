@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Price Predictor</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="container">
+    <header class="hero">
+      <div class="hero-icon">🏠</div>
+      <h1>House Price Predictor</h1>
+      <p class="subtitle">Enter property details to get an instant AI-powered price estimate</p>
+    </header>
+
+    <div class="card">
+      <form id="predictForm" novalidate>
+
+        <!-- Row 1: Area, Rooms, Build Year -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Area_SqFt">Area (sq ft) <span class="req">*</span></label>
+            <input type="number" id="Area_SqFt" name="Area_SqFt"
+                   placeholder="400 – 5000" min="400" max="5000" required />
+          </div>
+          <div class="form-group">
+            <label for="Rooms">Rooms <span class="req">*</span></label>
+            <input type="number" id="Rooms" name="Rooms"
+                   placeholder="1 – 10" min="1" max="10" required />
+          </div>
+          <div class="form-group">
+            <label for="Build_Year">Build Year <span class="req">*</span></label>
+            <input type="number" id="Build_Year" name="Build_Year"
+                   placeholder="1990 – 2025" min="1990" max="2025" required />
+          </div>
+        </div>
+
+        <!-- Row 2: Location, Street Type -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Location">Location <span class="req">*</span></label>
+            <select id="Location" name="Location" required>
+              <option value="" disabled selected>Select location</option>
+              <option>Indiranagar</option>
+              <option>Koramangala</option>
+              <option>Whitefield</option>
+              <option>HSR Layout</option>
+              <option>Jayanagar</option>
+              <option>Electronic City</option>
+              <option>Yelahanka</option>
+              <option>Marathahalli</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Street_Type">Street Type <span class="req">*</span></label>
+            <select id="Street_Type" name="Street_Type" required>
+              <option value="" disabled selected>Select street type</option>
+              <option>Main Road</option>
+              <option>Cross Road</option>
+              <option>Inner Lane</option>
+              <option>Highway Facing</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 3: Furnishing, Property Type -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="Furnishing">Furnishing <span class="req">*</span></label>
+            <select id="Furnishing" name="Furnishing" required>
+              <option value="" disabled selected>Select furnishing</option>
+              <option>Unfurnished</option>
+              <option>Semi-Furnished</option>
+              <option>Fully Furnished</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Property_Type">Property Type <span class="req">*</span></label>
+            <select id="Property_Type" name="Property_Type" required>
+              <option value="" disabled selected>Select property type</option>
+              <option>Apartment</option>
+              <option>Independent House</option>
+              <option>Villa</option>
+              <option>Penthouse</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Has Pool toggle -->
+        <div class="form-row">
+          <div class="form-group pool-group">
+            <label>Has Swimming Pool?</label>
+            <div class="toggle-group" role="group" aria-label="Has Pool">
+              <button type="button" class="toggle-btn active" id="pool-no"
+                      data-value="false">No</button>
+              <button type="button" class="toggle-btn" id="pool-yes"
+                      data-value="true">Yes 🏊</button>
+            </div>
+            <input type="hidden" id="Has_Pool" name="Has_Pool" value="false" />
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-text">🔍 Predict Price</span>
+          <span class="btn-loader" aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Result area -->
+    <div class="result-card" id="resultCard" aria-live="polite">
+      <div class="result-inner" id="resultInner"></div>
+    </div>
+
+    <footer class="footer">
+      <p>Powered by Random Forest · Trained on Bangalore synthetic dataset</p>
+    </footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
